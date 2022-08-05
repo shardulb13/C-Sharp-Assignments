@@ -11,7 +11,7 @@ namespace LinqOperations
         {
             Student stdobj1 = new Student(1, "John", 8);
             Student stdobj2 = new Student(2, "Alex", 5);
-            Student stdobj3 = new Student(3, "Adam", 7);
+            Student stdobj3 = new Student(3, "Adam", 8);
             Student stdobj4 = new Student(4, "Krish", 10);
             Student stdobj5 = new Student(5, "Tom", 9);
             //Student stdobj6 = new Student(6, "BEN", 1);
@@ -92,20 +92,20 @@ namespace LinqOperations
             Console.WriteLine();
 
             //Contains Method to check whether the name present in the list
-            Console.WriteLine("Enter a student name to find from list:");
-            string name = Console.ReadLine();
-            var mylinqcontains = (from s in studentlist
-                                  select s.Name).Contains(name);
+            //Console.WriteLine("Enter a student name to find from list:");
+            //string name = Console.ReadLine();
+            //var mylinqcontains = (from s in studentlist
+            //                      select s.Name).Contains(name);
 
-            if (mylinqcontains)
-            {
-                Console.WriteLine("Name Present in the list");
-            }
-            else
-            {
-                Console.WriteLine("Name not Present");
-            }
-            Console.WriteLine();
+            //if (mylinqcontains)
+            //{
+            //    Console.WriteLine("Name Present in the list");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Name not Present");
+            //}
+            //Console.WriteLine();
 
 
             //All data of student list
@@ -123,69 +123,85 @@ namespace LinqOperations
 ;
             // --------------------------------------------Without Linq ---------------------------------------------
             Console.WriteLine("--------Without Linq -----------");
-            Console.WriteLine("Student and Teacher list:");
-            foreach (var std in studentlist)
-            {
-                foreach (var te in teacherlist)
-                {
-                    if (std.Standard == te.standard)
-                    {
-                        Console.WriteLine(" RollNo: {0}, StudentName: {1}, TeacherName: {2}, Standard: {3}",std.Rollno, std.Name, te.teachername, std.Standard);
-                    }
-                }
-            }
+            //Console.WriteLine("Student and Teacher list:");
+            //foreach (var std in studentlist)
+            //{
+            //    foreach (var te in teacherlist)
+            //    {
+            //        if (std.Standard == te.standard)
+            //        {
+            //            Console.WriteLine(" RollNo: {0}, StudentName: {1}, TeacherName: {2}, Standard: {3}",std.Rollno, std.Name, te.teachername, std.Standard);
+            //        }
+            //    }
+            //}
             Console.WriteLine();
 
+            //to find a name from the list
+            //Console.WriteLine("Enter a student name to find from list:");
+            //string nameval = Console.ReadLine();
+            //int count = 0;
+            //foreach (var da in studentlist)
+            //{
+            //    if (da.Name == nameval)
+            //    {
+            //        Console.WriteLine("Name Found" + da.Name);
+            //        count++;
+            //        break;
+            //    }
+            //}
+            //if (count < 1)
+            //{
+            //    Console.WriteLine("Name not found");
+            //}
 
+            //Console.WriteLine("Sorted Student List By Ascending Order");
+            //for (int i = 0; i < studentlist.Count; i++)
+            //{
+            //    for (int j = i + 1; j < studentlist.Count; j++)
+            //    {
+            //        if (studentlist[i].Standard > studentlist[j].Standard)
+            //        {
+            //            int temprollno = studentlist[i].Rollno;
+            //            studentlist[i].Rollno = studentlist[j].Rollno;
+            //            studentlist[j].Rollno = temprollno;
 
-            Console.WriteLine("Sorted Student List By Ascending Order");
-            for (int i = 0; i < studentlist.Count; i++)
-            {
-                for (int j = i + 1; j < studentlist.Count; j++)
-                {
-                    if (studentlist[i].Standard > studentlist[j].Standard)
-                    {
-                        int temprollno = studentlist[i].Rollno;
-                        studentlist[i].Rollno = studentlist[j].Rollno;
-                        studentlist[j].Rollno = temprollno;
+            //            string tempName = studentlist[i].Name;
+            //            studentlist[i].Name = studentlist[j].Name;
+            //            studentlist[j].Name = tempName;
 
-                        string tempName = studentlist[i].Name;
-                        studentlist[i].Name = studentlist[j].Name;
-                        studentlist[j].Name = tempName;
+            //            int tempstd = studentlist[i].Standard;
+            //            studentlist[i].Standard = studentlist[j].Standard;
+            //            studentlist[j].Standard = tempstd;
+            //        }
+            //    }
 
-                        int tempstd = studentlist[i].Standard;
-                        studentlist[i].Standard = studentlist[j].Standard;
-                        studentlist[j].Standard = tempstd;
-                    }
-                }
-
-                Console.WriteLine("StudentRollno: {0}, StudentName: {1}, Standard: {2}", studentlist[i].Rollno, studentlist[i].Name, studentlist[i].Standard);
-            }
+            //    Console.WriteLine("StudentRollno: {0}, StudentName: {1}, Standard: {2}", studentlist[i].Rollno, studentlist[i].Name, studentlist[i].Standard);
+            //}
             Console.WriteLine();
 
-            Console.WriteLine("Sorted Student List By Descending Order");
-            for (int i = 0; i < studentlist.Count; i++)
-            {
-                for (int j = i + 1; j < studentlist.Count; j++)
-                {
-                    if (studentlist[i].Standard < studentlist[j].Standard)
-                    {
-                        int temprollno = studentlist[i].Rollno;
-                        studentlist[i].Rollno = studentlist[j].Rollno;
-                        studentlist[j].Rollno = temprollno;
+            //Console.WriteLine("Sorted Student List By Descending Order");
+            //for (int i = 0; i < studentlist.Count; i++)
+            //{
+            //    for (int j = i + 1; j < studentlist.Count; j++)
+            //    {
+            //        if (studentlist[i].Standard < studentlist[j].Standard)
+            //        {
+            //            int temprollno = studentlist[i].Rollno;
+            //            studentlist[i].Rollno = studentlist[j].Rollno;
+            //            studentlist[j].Rollno = temprollno;
 
-                        string tempName = studentlist[i].Name;
-                        studentlist[i].Name = studentlist[j].Name;
-                        studentlist[j].Name = tempName;
+            //            string tempName = studentlist[i].Name;
+            //            studentlist[i].Name = studentlist[j].Name;
+            //            studentlist[j].Name = tempName;
 
-                        int tempstd = studentlist[i].Standard;
-                        studentlist[i].Standard = studentlist[j].Standard;
-                        studentlist[j].Standard = tempstd;
-                    }
-                }
+            //            int tempstd = studentlist[i].Standard;
+            //            studentlist[i].Standard = studentlist[j].Standard;
+            //            studentlist[j].Standard = tempstd;
+            //        }
+            //    }
 
-                Console.WriteLine("StudentRollno: {0}, StudentName: {1}, Standard: {2}", studentlist[i].Rollno, studentlist[i].Name, studentlist[i].Standard);
-            }
+            //    Console.WriteLine("StudentRollno: {0}, StudentName: {1}, Standard: {2}", studentlist[i].Rollno, studentlist[i].Name, studentlist[i].Standard);
+            //}
 
             Console.WriteLine();
 
@@ -198,25 +214,128 @@ namespace LinqOperations
 
             //}
 
+            // ---------------------------------------Method Syntax --------------------------------------//
 
-            //to find a name from the list
-            Console.WriteLine("Enter a student name to find from list:");
-            var nameval = Console.ReadLine();
 
-            for(int i=0; i < studentlist.Count; i++)
+            ////GroupBy Example to show the name of students according to standard
+            //var GroupByQueury = studentlist.GroupBy(s => s.Standard);
+
+            //foreach (var item in GroupByQueury)
+            //{
+            //    Console.WriteLine("Standard: {0}", item.Key);
+
+            //    foreach (Student s in item)
+            //    {
+            //        Console.WriteLine("Student Name: {0}", s.Name);
+            //    }
+
+            //}
+
+
+            ////OrderBy and ThenBy to sort multiple columns in list.
+            //var orderByQuery = studentlist.OrderBy(s => s.Name).ThenBy(o => o.Standard).ThenBy(r => r.Rollno);
+
+            //foreach(var obj in orderByQuery)
+            //{
+            //    Console.WriteLine("StudentName: {0}, Standard: {1}, Rollno: {2}" , obj.Name, obj.Standard, obj.Rollno);
+            //}
+
+
+
+            ////// First method to show the first record in the list.
+            //var firstQuery = studentlist.First( x => x.Standard == 11);
+            //Console.WriteLine("First StudentName: {0}", firstQuery.Name);
+
+            ////// Last method to show the last record in the list.
+            //var firstQuery1 = studentlist.Last(x => x.Standard == 8);
+            //Console.WriteLine("Last StudentName: {0}", firstQuery1.Name);
+
+            //// FirstorDefault method. NOTE: Always Check not null condition while using this
+            //var firstorDefaultQuery = studentlist.FirstOrDefault(x => x.Standard == 11);
+            //if (firstorDefaultQuery != null)
+            //{
+            //    Console.WriteLine("StudentName: {0}", firstorDefaultQuery.Name);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Null Result");
+            //}
+
+            ////ShortWay to write above if condition
+            //Console.WriteLine("StudentName:{0}", firstorDefaultQuery?.Name);
+
+            ////LastorDefault Method.
+            //var lastorDefaultQuery = studentlist.LastOrDefault(x => x.Standard == 8);
+            //if (lastorDefaultQuery != null)
+            //{
+            //    Console.WriteLine("StudentName: {0}", lastorDefaultQuery.Name);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Null Result");
+            //}
+
+
+            ////simple add & addrange example
+            //List<int> lst = new List<int>();
+            //lst.Add(1);
+            //lst.Add(2);
+
+
+            //int[] arr = { 3, 4, 5 };
+
+            //lst.AddRange(arr);
+
+            //foreach(int i in lst)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+
+            //// Addrange using list
+            //DuplicateList d1 = new DuplicateList
+            //{
+            //    Id = 1,
+            //    name = "Shardul",
+
+            //};
+
+            //List<DuplicateList> dlist = new List<DuplicateList>();
+            //dlist.Add(d1);
+
+            //studentlist.AddRange((IEnumerable<Student>)dlist);
+
+            //foreach (var item in studentlist.ToList())
+            //{
+            //    Console.WriteLine(item.Rollno + item.Name + item.Standard);
+            //}
+
+
+            //// Created Another list of duplicatelist class to add specific data from studentlist.
+            //List<DuplicateList> L1 = new List<DuplicateList>();
+            //L1 = studentlist.Select(x => new DuplicateList { Id = x.Rollno, name = x.Name }).ToList();
+
+            //foreach (DuplicateList i in L1)
+            //{
+            //    Console.WriteLine(i.Id + " " + i.name);
+            //}
+
+            //// Distinct Method : returns new collection of unique elements from the given collection.
+            List<int> numlist = new List<int>() { 1 ,3, 2, 1, 5, 3, 5, 3, 2, 4};
+            var distinctItems = studentlist.Distinct();
+            foreach(var item in distinctItems)
             {
-                if (studentlist[i].Name == nameval)
-                {
-                    Console.WriteLine("Name Present in the list" + studentlist[i].Name);
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Name not Present" + studentlist[i].Name);
-                    break;
-                }
-
+                Console.WriteLine(item.Standard);
             }
+            
         }
+    }
+
+    class DuplicateList
+    {
+        public int Id { get; set; }
+        public string name { get; set; }
+
+        
     }
 }
