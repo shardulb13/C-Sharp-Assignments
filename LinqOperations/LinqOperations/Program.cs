@@ -91,6 +91,10 @@ namespace LinqOperations
 
             Console.WriteLine();
 
+            var anyData = studentlist.Any(i => i.Name.Contains('s'));
+            Console.WriteLine("Any Method result:" + anyData);
+            Console.WriteLine();
+
             //Contains Method to check whether the name present in the list
             //Console.WriteLine("Enter a student name to find from list:");
             //string name = Console.ReadLine();
@@ -322,12 +326,23 @@ namespace LinqOperations
 
             //// Distinct Method : returns new collection of unique elements from the given collection.
             List<int> numlist = new List<int>() { 1 ,3, 2, 1, 5, 3, 5, 3, 2, 4};
-            var distinctItems = studentlist.Distinct();
-            foreach(var item in distinctItems)
-            {
-                Console.WriteLine(item.Standard);
-            }
-            
+            //var distinctItems = studentlist.Distinct();
+            //foreach(var item in distinctItems)
+            //{
+            //    Console.WriteLine(item.Standard);
+            //}
+
+            var aggregate = numlist.Aggregate((s1,s2) => s1 + s2);
+            Console.WriteLine("Aggregate" + aggregate);
+            var average = numlist.Average();
+            Console.WriteLine("Average:" + average);
+            var minNum = numlist.Min();
+            Console.WriteLine("Minimum Number" + minNum);
+            var maxNum = numlist.Max();
+            Console.WriteLine("Maximum Number" + maxNum);
+            var sum = numlist.Sum();
+            Console.WriteLine("Sum" + sum);
+        
         }
     }
 
@@ -336,6 +351,5 @@ namespace LinqOperations
         public int Id { get; set; }
         public string name { get; set; }
 
-        
     }
 }
